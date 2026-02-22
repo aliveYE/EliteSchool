@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ student.name }}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="page-bg">
+{% include "partials/navbar.html" %}
+
+<div class="profile-card">
+    <img src="/media/{{ student.photo }}" alt="Student Photo">
+
+    <h2>{{ student.name }}</h2>
+
+    <p>الجنس: {{ student.gender }}</p>
+    <p>تاريخ الميلاد: {{ student.dob }}</p>
+    <p>الحالة الأكاديمية: {{ student.status }}</p>
+    <p>المجموع: {{ student.grade }}%</p>
+
+    <hr>
+
+    <h3>الحضور</h3>
+    <p>{{ student.attendance }} / {{ student.total_days }} يوم</p>
+
+    <div class="attendance-bar">
+    <h3>نتائج الاختبارات</h3>
+
+<div class="chart">
+    <div class="bar" style="height:90%">رياضيات</div>
+    <div class="bar" style="height:85%">علوم</div>
+    <div class="bar" style="height:88%">لغة عربية</div>
+</div>
+        <div class="attendance-fill"
+             style="width: {{ student.attendance_percent }}%;">
+            {{ student.attendance_percent }}%
+        </div>
+    </div>
+</div>
+
+<a href="/students/" class="back-btn">⬅ العودة إلى الطلاب</a>
+
+</body>
+</html>

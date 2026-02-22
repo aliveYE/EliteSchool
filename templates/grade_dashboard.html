@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مدرسة التعاون | لوحة الصف</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="page-bg">
+{% include "partials/navbar.html" %}
+
+<h1 class="page-title">📊 لوحة تحكم الصف الرابع – مدرسة التعاون</h1>
+
+<div class="lesson-diagram">
+
+    <div class="lesson-card">
+        <h2>👨‍🎓 عدد الطلاب</h2>
+        <p>25 طالب</p>
+    </div>
+
+    <div class="lesson-card">
+        <h2>📚 الدروس اليوم</h2>
+        <p>3 حصص</p>
+    </div>
+
+    <div class="lesson-card">
+        <h2>📈 متوسط الحضور</h2>
+        <p>94%</p>
+    </div>
+
+</div>
+
+<div class="menu-buttons" style="margin-top:50px;">
+    <a href="/students/" class="glass-btn">عرض الطلاب</a>
+    <a href="/lessons/" class="glass-btn">دروس اليوم</a>
+    <a href="/add-student/" class="glass-btn">➕ إضافة طالب</a>
+</div>
+
+<a href="/home/" class="back-btn">⬅ العودة إلى الرئيسية</a>
+
+</body>
+</html>

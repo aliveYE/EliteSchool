@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مدرسة التعاون | إضافة طالب</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="page-bg">
+{% include "partials/navbar.html" %}
+
+<h1 class="page-title">➕ إضافة طالب جديد</h1>
+
+<form method="post" class="profile-card" style="max-width:400px;">
+    <!-- لاحقًا نضيف {% csrf_token %} عند الربط بالباك اند -->
+
+    <label>الاسم الكامل</label>
+    <input type="text" placeholder="مثال: أحمد محمد علي" required>
+
+    <br><br>
+
+    <label>الجنس</label>
+    <select>
+        <option>ذكر</option>
+        <option>أنثى</option>
+    </select>
+
+    <br><br>
+
+    <label>تاريخ الميلاد</label>
+    <input type="date" required>
+
+    <br><br>
+
+    <label>الصف</label>
+    <select>
+        <option>الصف الأول</option>
+        <option>الصف الثاني</option>
+        <option>الصف الثالث</option>
+        <option selected>الصف الرابع</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit" class="glass-btn" style="border:none;cursor:pointer;">
+        حفظ الطالب
+    </button>
+</form>
+
+<a href="/students/" class="back-btn">⬅ العودة إلى الطلاب</a>
+
+</body>
+</html>

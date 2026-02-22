@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+/* ===== GLOBAL RESET ===== */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Cairo', 'Segoe UI', sans-serif;
+}
+
+/* ===== LOADER ===== */
+.loader-body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-container {
+    text-align: center;
+}
+
+.school-logo h1 {
+    margin: 10px 0;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 6px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    background: #00e6ff;
+    animation: load 3s linear forwards;
+}
+
+@keyframes load {
+    to { width: 100%; }
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.65);
+    position: absolute;
+    inset: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+/* ✅ FIXED BUTTON LAYOUT */
+.menu-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;          /* ✅ spacing */
+    margin-top: 40px;
+    flex-wrap: wrap;    /* ✅ prevents overlap */
+}
+
+.glass-btn {
+    min-width: 180px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.glass-btn:hover {
+    background: #00e6ff;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* ===== PAGES ===== */
+.page-bg {
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    min-height: 100vh;
+    padding: 40px;
+    animation: fadeIn 0.7s ease-in;
+}
+
+.page-title {
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* ===== LESSONS ===== */
+.lesson-diagram {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.lesson-card {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* ===== STUDENTS ===== */
+.search-box {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 300px;
+}
+
+.student-list {
+    max-width: 420px;
+    margin: auto;
+}
+
+.student-card {
+    display: block;
+    background: rgba(255,255,255,0.2);
+    margin: 12px 0;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* ===== PROFILE ===== */
+.profile-card {
+    max-width: 320px;
+    margin: auto;
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+/* ===== ATTENDANCE ===== */
+.attendance-bar {
+    width: 100%;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.attendance-fill {
+    height: 25px;
+    background: linear-gradient(90deg, #00ffcc, #00ccff);
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+/* ===== CHART ===== */
+.chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.bar {
+    width: 60px;
+    background: linear-gradient(to top, #ffdd00, #ff9900);
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+/* ===== HOVER EFFECTS ===== */
+.lesson-card:hover,
+.student-card:hover,
+.profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+/* ===== LINKS ===== */
+a {
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ffdd00;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.loading-text {
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.85;
+    letter-spacing: 1px;
+}
+/* GRADE FILTER */
+.grade-filter {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.grade-filter a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.grade-filter a:hover,
+.grade-filter a.active {
+    background: #00e6ff;
+    color: black;
+}
+
+/* STUDENT CARD CONTENT */
+.student-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.student-grade {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-top: 5px;
+}
+
+/* NAVBAR */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00e6ff;
+}
+
+.nav-links a {
+    margin: 0 12px;
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    background: #00e6ff;
+    color: black;
+}
+
+.form-card {
+    width: 400px;
+    background: white;
+    color: black;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+}

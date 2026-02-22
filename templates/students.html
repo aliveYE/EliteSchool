@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الطلاب</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <script>
+        function searchStudent() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let cards = document.getElementsByClassName("student-card");
+
+            for (let card of cards) {
+                card.style.display = card.innerText.toLowerCase().includes(input)
+                    ? "block"
+                    : "none";
+            }
+        }
+    </script>
+</head>
+
+<body class="page-bg">
+
+{% include "partials/navbar.html" %}
+
+<h1 class="page-title">👨‍🎓 طلاب الصف</h1>
+
+<!-- SEARCH -->
+<input
+    type="text"
+    id="search"
+    placeholder="🔍 ابحث عن طالب..."
+    onkeyup="searchStudent()"
+    class="search-box"
+>
+
+<!-- GRADE FILTER -->
+<div class="grade-filter">
+    <a href="?grade=1">الأول</a>
+    <a href="?grade=2">الثاني</a>
+    <a href="?grade=3">الثالث</a>
+    <a href="?grade=4" class="active">الرابع</a>
+</div>
+
+<!-- STUDENT LIST -->
+<div class="student-list">
+    {% for s in students %}
+        <a href="/student/{{ s.id }}/" class="student-card">
+            <div class="student-name">{{ s.name }}</div>
+            <div class="student-grade">المعدل: {{ s.grade }}%</div>
+        </a>
+    {% empty %}
+        <p style="text-align:center;">لا يوجد طلاب</p>
+    {% endfor %}
+</div>
+
+<!-- ACTION BUTTONS -->
+<div class="menu-buttons">
+    <a href="/add-student/" class="glass-btn">➕ إضافة طالب</a>
+    <a href="/grade/" class="glass-btn">⬅ لوحة الصف</a>
+</div>
+
+</body>
+</html>
