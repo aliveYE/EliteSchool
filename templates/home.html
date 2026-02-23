@@ -1,26 +1,49 @@
+{% load i18n static %}
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>Elite School | Home</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
-{% include "partials/navbar.html" %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% trans "مدرسة التعاون النموذجية" %}</title>
 
-<div class="hero" style="background-image: url('/static/images/school.jpg');">
-    <div class="overlay"></div>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+  <header class="hero hero-bg" style="background-image: url('{% static "images/school.jpg" %}');">
+
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
-        <h1>مرحبا بكم في مدرسه التعاون</h1>
-        <p>حيث يلتقي العلم بالتميز</p>
 
-        <div class="menu-buttons">
-            <a href="/lessons/" class="glass-btn">📚 الدروس</a>
-            <a href="/students/" class="glass-btn">👨‍🎓 الطلاب</a>
-        </div>
+      <img src="{% static 'images/school.jpg' %}" class="school-img" alt="{% trans 'صورة المدرسة' %}">
+
+      <h1 class="hero-title">
+        {% trans "مدرسة التعاون النموذجية ترحب بكم" %}
+      </h1>
+
+      <p class="hero-quote">
+        {% trans "العلم نور والجهل ظلام" %}
+      </p>
+
+      <nav class="menu-buttons" aria-label="{% trans 'القائمة الرئيسية' %}">
+        <a href="{% url 'grade_dashboard' %}" class="glass-btn">📊 {% trans "لوحة الصف" %}</a>
+        <a href="{% url 'students' %}" class="glass-btn">👨‍🎓 {% trans "الطلاب" %}</a>
+        <a href="{% url 'lessons' %}" class="glass-btn">📚 {% trans "الدروس" %}</a>
+        <a href="{% url 'add_student' %}" class="glass-btn">➕ {% trans "إضافة طالب" %}</a>
+      </nav>
+
     </div>
-</div>
+  </header>
+
+  <main></main>
+
+  <footer class="glass-panel">
+    <p class="glow-text">
+      {% trans "© 2026 مدرسة التعاون النموذجية - جميع الحقوق محفوظة" %}
+    </p>
+  </footer>
 
 </body>
 </html>
